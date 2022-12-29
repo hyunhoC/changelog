@@ -19,6 +19,11 @@ app.get('/', (req, res) => {
 app.use('/api', protect, router);
 
 app.post('/user', createNewUser);
-app.post('/signin', signin)
+app.post('/signin', signin);
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.json({ message: 'oops there was an error.'});
+});
 
 export default app;
