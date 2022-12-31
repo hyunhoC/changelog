@@ -37,9 +37,9 @@ enum UPDATE_STATUS {
 }
 
 model Update {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
 
   title   String
   body    String
@@ -53,9 +53,9 @@ model Update {
 }
 
 model UpdatePoint {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
 
   name        String @db.VarChar(255)
   description String
